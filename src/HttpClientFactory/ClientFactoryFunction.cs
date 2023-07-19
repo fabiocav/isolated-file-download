@@ -17,7 +17,7 @@ namespace FunctionsVsLive
         }
 
         [Function(nameof(ClientFactoryFunction))]
-        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req, CancellationToken cancellationToken)
+        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, CancellationToken cancellationToken)
         {
             using HttpClient client = _httpClientFactory.CreateClient(nameof(ClientFactoryFunction));
 
