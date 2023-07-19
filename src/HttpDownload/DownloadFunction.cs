@@ -9,7 +9,8 @@ namespace FunctionsVsLive
         private const string BlobName = "dotnet-sdk-8.0.100-preview.6.23330.14-win-x64.exe";
 
         [Function(nameof(DownloadFunction))]
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, [BlobInput($"runtimes/{BlobName}")] Stream blobStream)
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req,
+            [BlobInput($"runtimes/{BlobName}")] Stream blobStream)
         {
             return new FileStreamResult(blobStream, "application/octet-stream")
             {

@@ -19,7 +19,9 @@ namespace FunctionsVsLive
         [Function(nameof(ClientFactoryFunction))]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req, CancellationToken cancellationToken)
         {
-           using HttpClient client = _httpClientFactory.CreateClient(nameof(ClientFactoryFunction));
+            _logger.LogInformation("Retrieving document...");
+
+            using HttpClient client = _httpClientFactory.CreateClient(nameof(ClientFactoryFunction));
 
             var result = await client.GetStringAsync("functions-overview", cancellationToken);
 

@@ -16,7 +16,7 @@ namespace FunctionsVsLive
         }
 
         [Function(nameof(GreetingFunction))]
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req, CancellationToken cancellationToken)
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, CancellationToken cancellationToken)
         {
             if (req.Query.TryGetValue("name", out var nameValues))
             {
