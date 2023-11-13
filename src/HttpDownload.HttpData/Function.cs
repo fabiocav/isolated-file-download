@@ -8,7 +8,7 @@ namespace HttpDownload.HttpData
 {
     public class Function
     {
-        private const string BlobName = "dotnet-sdk-8.0.100-preview.6.23330.14-win-x64.exe";
+        private const string BlobName = "dotnet-sdk-8.0.100-win-x64.exe";
 
         [Function("Function")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
